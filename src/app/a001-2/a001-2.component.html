@@ -1,0 +1,46 @@
+<div class="card">
+  <h5 class="card-header text-bg-dark">Task 1 - B</h5>
+  <div class="card-body">
+    <h5 class="card-title">Task requirement:</h5>
+    <p>To complete this task:</p>
+    <ol>
+      <li>Add a button labeled "Display Details."</li>
+      <li>
+        Below this button, include a paragraph with some content, such as
+        "Secret Password = tuna."
+      </li>
+      <li>
+        Implement functionality so that clicking the "Display Details" button
+        toggles the visibility of this paragraph.
+      </li>
+      <li>
+        To track button clicks, log each click into an array, and display this
+        array below the paragraph.
+      </li>
+      <li>
+        You can log either a timestamp or an incrementing number for each click.
+      </li>
+      <li>
+        Finally, starting from the 5th log item, apply a blue background and
+        white text to each subsequent log item using <code>ngStyle</code> for
+        the background color and <code>ngClass</code> for the text color.
+      </li>
+    </ol>
+    <button class="btn btn-outline-primary mb-3" (click)="toggleSecret()">
+      Display Details
+    </button>
+
+    @if(showSecret){
+    <p>Secret Password = FCI-TU.</p>
+    <ul>
+      <li
+        *ngFor="let log of clickLogs; let i = index"
+        [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+        [ngClass]="{ 'text-white': i >= 4 }"
+      >
+        {{ log }}
+      </li>
+    </ul>
+    }
+  </div>
+</div>

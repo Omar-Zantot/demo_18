@@ -13,10 +13,4 @@ export interface Product {
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
-export class MainComponent {
-  userName!: string;
-
-  resetUserName(): void {
-    this.userName = '';
-  }
-}
+export class MainComponent {}
