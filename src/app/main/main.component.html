@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col-md-12">
+      <div class="card">
+        <h5 class="card-header text-bg-dark">Task 1</h5>
+        <div class="card-body">
+          <h5 class="card-title">Task requirement:</h5>
+          <p class="card-text">
+            adding an input field that updates the username property using
+            Two-Way Binding. Next, use String Interpolation to display the value
+            of the username property in a paragraph below the input field. Then,
+            add a button that is only clickable when the username is not an
+            empty string. Finally, when the button is clicked, the username
+            should be reset to an empty string.
+          </p>
+          <input
+            type="text"
+            class="form-control mb-3"
+            [(ngModel)]="userName"
+            placeholder="Enter userName"
+          />
+          <p>{{ userName }}</p>
+          <button
+            (click)="resetUserName()"
+            [disabled]="!userName"
+            class="btn btn-primary"
+          >
+            Reset Username
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
